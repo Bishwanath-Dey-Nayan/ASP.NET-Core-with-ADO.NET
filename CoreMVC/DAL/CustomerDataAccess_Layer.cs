@@ -42,5 +42,29 @@ namespace CoreMVC.DAL
             }
             return lstCustomer;
         }
+
+        /// <summary>
+        /// Add New Customer
+        /// </summary>
+        /// <param name="customer"></param>
+        public void AddCustomer(Customer customer)
+        {
+            using(SqlConnection con = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("sp_AddCustomer",con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Name", customer.Name);
+                cmd.Parameters.AddWithValue("@Address", customer.Address);
+                cmd.Parameters.AddWithValue("@Gender", customer.Gender);
+                cmd.Parameters.AddWithValue("@Country", customer.Country);
+                cmd.Parameters.AddWithValue("@City", customer.City);
+                cmd.Parameters.AddWithValue("@MobileNO", customer.Mobile);
+                cmd.Parameters.AddWithValue("@MailId", customer.Email);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
     }
 }

@@ -18,5 +18,22 @@ namespace CoreMVC.Controllers
             customers = cds.GetAllCustomer().ToList();
             return View(customers);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create([Bind] Customer cus)
+        {
+            if(ModelState.IsValid)
+            {
+                cds.AddCustomer(cus);
+                return RedirectToAction("Index");
+            }
+            return View(cus);
+        }
     }
 }

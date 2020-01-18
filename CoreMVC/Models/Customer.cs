@@ -22,7 +22,8 @@ namespace CoreMVC.Models
         public string Country { get; set; }
 
         [Required(ErrorMessage = "Your must provide a Mobile Number")]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid Mobile number")]
+        //[RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid Mobile number")]
+        [Phone]
         public string Mobile { get; set; }
 
         [Required(ErrorMessage = "Enter Your Mail ID")]
