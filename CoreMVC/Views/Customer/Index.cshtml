@@ -35,7 +35,7 @@
             <td>@Html.DisplayFor(m => item.Mobile)</td>
             <td>@Html.DisplayFor(m => item.Email)</td>
             <td>
-                <a asp-action="" asp-route-id=""></a>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
             </td>
         </tr>
         }

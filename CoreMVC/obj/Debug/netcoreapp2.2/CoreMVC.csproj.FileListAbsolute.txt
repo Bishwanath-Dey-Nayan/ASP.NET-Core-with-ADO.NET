@@ -30,3 +30,5 @@ G:\PRACTISE PROJECTS\CoreMVC\CoreMVC\obj\Debug\netcoreapp2.2\CoreMVC.pdb
 G:\PRACTISE PROJECTS\CoreMVC\CoreMVC\obj\Debug\netcoreapp2.2\CoreMVC.csproj.CopyComplete
 G:\PRACTISE PROJECTS\CoreMVC\CoreMVC\obj\Debug\netcoreapp2.2\Razor\Views\Customer\Index.g.cshtml.cs
 G:\PRACTISE PROJECTS\CoreMVC\CoreMVC\obj\Debug\netcoreapp2.2\Razor\Views\Customer\Create.g.cshtml.cs
+G:\PRACTISE PROJECTS\CoreMVC\CoreMVC\obj\Debug\netcoreapp2.2\Razor\Views\Customer\Edit1.g.cshtml.cs
+G:\PRACTISE PROJECTS\CoreMVC\CoreMVC\obj\Debug\netcoreapp2.2\Razor\Views\Customer\Edit.g.cshtml.cs

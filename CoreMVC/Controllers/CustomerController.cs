@@ -35,5 +35,35 @@ namespace CoreMVC.Controllers
             }
             return View(cus);
         }
+
+        public IActionResult Edit(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            Customer customer = cds.GetCustomerData(id);
+            if(customer == null)
+            {
+                return NotFound();
+            }
+            return View(customer);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id,[Bind]Customer customer)
+        {
+            if(id !=customer.ID)
+            {
+                return NotFound();
+            }
+            if(ModelState.IsValid)
+            {
+                cds.UpdateCustomer(customer);
+                return RedirectToAction("Index");
+            }
+            return View(customer);
+        }
     }
 }
